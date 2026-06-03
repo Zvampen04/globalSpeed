@@ -586,29 +586,20 @@ export let commandInfos: { [key in CommandName]: Command } = {
 export function getDefaultPageKeybinds(): Keybind[] {
 	if (isMobile()) return []
 
-	let kbs: Keybind[] = [
-		{
+	let kbs: Keybind[] = [		{
 			...commandInfos.speed.generate(),
-			key: "KeyA",
-			adjustMode: AdjustMode.ADD,
-			valueNumber: -0.1,
-		},
-		{
-			...commandInfos.speed.generate(),
-			key: "KeyS",
+			key: "PageUp",
 			valueNumber: 1,
 		},
 		{
 			...commandInfos.speed.generate(),
-			key: "KeyD",
-			adjustMode: AdjustMode.ADD,
-			valueNumber: 0.1,
+			key: "PageDown",
+			valueNumber: 2,
 		},
 		{
-			...commandInfos.temporarySpeed.generate(),
-			key: "KeyG",
+			...commandInfos.speed.generate(),
+			key: "Home",
 			valueNumber: 3,
-			spacing: 1,
 		},
 		{
 			...commandInfos.seek.generate(),
